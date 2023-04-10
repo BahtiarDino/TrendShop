@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "759951765232",
+    "project_id": "database-ea298",
+    "storage_bucket": "database-ea298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759951765232:android:842288751a9e02c2315c35",
+        "android_client_info": {
+          "package_name": "com.example.trendshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759951765232-38kte9jl023ako3maacae85dq1a4kgft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Wg5jkpYaLScMoKbjWkCPmfIkREJJexE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759951765232-38kte9jl023ako3maacae85dq1a4kgft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
