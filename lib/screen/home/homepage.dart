@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trendshop/screen/category/category.dart';
+import 'package:trendshop/screen/detail/productdetail.dart';
 import 'package:trendshop/utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +13,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {  @override
+class _HomePageState extends State<HomePage> {
+  @override
   int currentPage = 0;
 
   Widget build(BuildContext context) {
@@ -74,7 +77,12 @@ class _HomePageState extends State<HomePage> {  @override
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 2 * fem, 0 * fem, 0 * fem),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => product()));
+                              },
                               style: TextButton.styleFrom(
                                 padding: EdgeInsets.zero,
                               ),
@@ -127,7 +135,8 @@ class _HomePageState extends State<HomePage> {  @override
                                 height: 229 * fem,
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30 * fem),
+                                    borderRadius:
+                                        BorderRadius.circular(30 * fem),
                                   ),
                                 ),
                               ),
@@ -172,27 +181,36 @@ class _HomePageState extends State<HomePage> {  @override
                         height: 25 * fem,
                         child: Stack(
                           children: [
-                            Positioned(
-                              // seeall2j2 (47:266)
-                              left: 4 * fem,
-                              top: 4 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 51 * fem,
-                                  height: 19 * fem,
-                                  child: Text(
-                                    'See All',
-                                    style: SafeGoogleFont(
-                                      'Inter',
-                                      fontSize: 15 * ffem,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.2125 * ffem / fem,
-                                      color: Color(0xff1877f2),
+                            Expanded(
+                                child: Container(
+                              child: TextButton(
+                                onPressed: () => {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const category();
+                                      },
                                     ),
+                                  )
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                // autogroupzn1eiLY (NHZMCFbkKuudm3EnBSZN1e)
+                                child: Text(
+                                  'See All',
+                                  textAlign: TextAlign.center,
+                                  style: SafeGoogleFont(
+                                    'Inter',
+                                    fontSize: 15 * ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2125 * ffem / fem,
+                                    color: Color(0xff1877f2),
                                   ),
                                 ),
                               ),
-                            ),
+                            )),
                             Positioned(
                               // rectangle71LDv (130:178)
                               left: 0 * fem,
@@ -211,16 +229,13 @@ class _HomePageState extends State<HomePage> {  @override
                                 ),
                               ),
                             ),
-                           
                           ],
                         ),
                       ),
-                      
                     ],
                   ),
                 ),
               ),
-              
               Positioned(
                 // autogroupwvc4Eq6 (NHZPGGz6FASKjxPRUWWVC4)
                 left: 23 * fem,
@@ -289,13 +304,9 @@ class _HomePageState extends State<HomePage> {  @override
                 child: Container(
                   width: 392 * fem,
                   height: 174 * fem,
-                  child: Container(
+                  child: SingleChildScrollView(
                     // group47eXS (192:151)
-                    width: 512 * fem,
-                    height: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10 * fem),
-                    ),
+
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [

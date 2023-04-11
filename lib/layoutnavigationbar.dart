@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trendshop/screen/bag/bag.dart';
+import 'package:trendshop/screen/detail/productdetail.dart';
 import 'package:trendshop/screen/home/homepage.dart';
+import 'package:trendshop/screen/notification/notification.dart';
 import 'package:trendshop/screen/search/search.dart';
 import 'package:trendshop/screen/profile/profile.dart';
 
@@ -17,8 +19,10 @@ class _LayoutNavigationBarState extends State<LayoutNavigationBar> {
   final List<Widget> _children = [
     const HomePage(),
     search(),
+    const notification(),
     const Profile(),
-    const Bag(),
+   
+    
   ];
   void onBarTapped(int index) {
     setState(() {
@@ -40,9 +44,9 @@ class _LayoutNavigationBarState extends State<LayoutNavigationBar> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(icon: Icon(Icons.notification_add), label: 'Notif'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person), label: 'Profile'),
-            BottomNavigationBarItem(icon: Icon(Icons.badge), label: 'Bag'),
           ],
         ),
       ),

@@ -1,44 +1,52 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:trendshop/screen/profile/profile.dart';
 import '../welcome/welcomepage.dart';
+import 'package:trendshop/utils.dart';
 
 class notification extends StatefulWidget {
+  const notification({super.key});
+
   @override
   State<notification> createState() => _notificationState();
 }
 
 class _notificationState extends State<notification> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
+  int currentPage = 0;
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          padding: EdgeInsets.only(left: 40, right: 40),
           child: Column(
             children: [
-              SizedBox(
-                height: 50,
+              Container(
+                 margin: EdgeInsets.fromLTRB(132, 350, 0, 0),
+                // bellpinlightT7R (138:1033)
+                width: 150,
+                height: 150,
+                child: Image.asset(
+                  'assets/images/bellpinlight-FQU.png',
+                  width: 150,
+                  height: 150,
+                ),
               ),
-              Image.asset('assets/logo/notifi.png',
-                  height: 388, fit: BoxFit.fill),
-              SizedBox(
-                height: 30,
+              Container(
+                // nothinghere6RH (138:1039)
+                margin: EdgeInsets.fromLTRB(122, 21, 0, 0),
+                child: Text(
+                  'Nothing Here!',
+                  textAlign: TextAlign.center,
+                  style: SafeGoogleFont(
+                    'Inter',
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                    height: 1.2125,
+                    color: Color(0xff000000),
+                  ),
+                ),
               ),
-              Text(
-                "Nothing Here!",
-                style: TextStyle(
-                    fontFamily: 'sans-serif',
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              )
             ],
           ),
         ));

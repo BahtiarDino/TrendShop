@@ -2,11 +2,13 @@ import 'dart:html';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:trendshop/screen/notification/notification.dart';
 import './screen/search/search.dart';
 import './screen/auth/signin.dart';
 import './screen/profile/profile.dart';
 import './screen/home/homepage.dart';
 import './screen/category/category.dart';
+import './screen/detail/productdetail.dart';
 import './screen/bag/bag.dart';
 import 'splashscreen.dart';
 
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme.apply(bodyColor: Color(0xFF535353)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: category(),
+      home: splashscreen(),
     );
   }
 }

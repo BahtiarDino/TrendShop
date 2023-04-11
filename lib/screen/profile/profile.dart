@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trendshop/screen/notification/notification.dart';
 import 'package:trendshop/utils.dart';
 
 class Profile extends StatefulWidget {
@@ -14,7 +15,8 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  @override int currentPage = 0;
+  @override
+  int currentPage = 0;
 
   Widget build(BuildContext context) {
     double baseWidth = 414;
@@ -24,7 +26,7 @@ class _ProfileState extends State<Profile> {
       width: double.infinity,
       child: Container(
         // welcomepageNa4 (37:83)
-        padding: EdgeInsets.fromLTRB(0 * fem, 110 * fem, 0 * fem, 26 * fem),
+        padding: EdgeInsets.fromLTRB(0 * fem, 45 * fem, 0 * fem, 26 * fem),
         width: double.infinity,
         decoration: BoxDecoration(
           color: Color(0xffffffff),
@@ -34,9 +36,36 @@ class _ProfileState extends State<Profile> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
+                  margin: EdgeInsets.fromLTRB(
+                      338 * fem, 0 * fem, 0 * fem, 35 * fem),
+                  child: TextButton(
+                     onPressed: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return notification();
+                                },
+                              ),
+                            )
+                          },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      child: Image.asset(
+                        'assets/images/bellpinlight.png',
+                        height: 30,
+                        width: 30,
+                      ),
+                    ),
+                  )),
+              Container(
                 // achievementsachievementaccompl (174:157)
                 margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 13 * fem),
+                    EdgeInsets.fromLTRB(0 * fem, 35 * fem, 0 * fem, 13 * fem),
                 padding: EdgeInsets.fromLTRB(
                     8.3 * fem, 7.76 * fem, 8.3 * fem, 7.76 * fem),
                 width: 415 * fem,
@@ -196,8 +225,8 @@ class _ProfileState extends State<Profile> {
               Expanded(
                 child: Container(
                   // group5F3e (198:346)
-                  margin: EdgeInsets.fromLTRB(
-                      1.4 * fem, 0 * fem, 0 * fem, 0 * fem),
+                  margin:
+                      EdgeInsets.fromLTRB(1.4 * fem, 0 * fem, 0 * fem, 0 * fem),
                   child: TextButton(
                     onPressed: () => {
                       Navigator.push(
@@ -236,12 +265,10 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              
             ],
           ),
         ),
       ),
-       
     );
   }
 }
